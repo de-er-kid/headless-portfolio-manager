@@ -43,7 +43,7 @@
          
          // Add hooks
          add_action('admin_menu', array($this, 'add_admin_menu'));
-         add_action('init', array($this, 'remove_frontend_features'));
+        //  add_action('init', array($this, 'remove_frontend_features'));
      }
  
      private function load_dependencies() {
@@ -63,6 +63,9 @@
          
          // API
          require_once HPM_PLUGIN_PATH . 'includes/api/class-rest-api.php';
+
+        //  Theme
+        require_once HPM_PLUGIN_PATH . 'includes/class-portfolio-headless-theme.php';
      }
  
      private function init_components() {
