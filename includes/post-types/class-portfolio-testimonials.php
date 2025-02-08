@@ -6,7 +6,7 @@
  */
 
 if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
+    exit;
 }
 
 class Portfolio_Testimonials
@@ -28,17 +28,17 @@ class Portfolio_Testimonials
     public function register_post_type()
     {
         $labels = array(
-            'name' => __('Testimonials', 'textdomain'),
-            'singular_name' => __('Testimonial', 'textdomain'),
-            'add_new' => __('Add New', 'textdomain'),
-            'add_new_item' => __('Add New Testimonial', 'textdomain'),
-            'edit_item' => __('Edit Testimonial', 'textdomain'),
-            'new_item' => __('New Testimonial', 'textdomain'),
-            'view_item' => __('View Testimonial', 'textdomain'),
-            'all_items' => __('Testimonials', 'textdomain'),
-            'search_items' => __('Search Testimonials', 'textdomain'),
-            'not_found' => __('No testimonials found.', 'textdomain'),
-            'not_found_in_trash' => __('No testimonials found in Trash.', 'textdomain'),
+            'name' => __('Testimonials', 'headless-portfolio-manager'),
+            'singular_name' => __('Testimonial', 'headless-portfolio-manager'),
+            'add_new' => __('Add New', 'headless-portfolio-manager'),
+            'add_new_item' => __('Add New Testimonial', 'headless-portfolio-manager'),
+            'edit_item' => __('Edit Testimonial', 'headless-portfolio-manager'),
+            'new_item' => __('New Testimonial', 'headless-portfolio-manager'),
+            'view_item' => __('View Testimonial', 'headless-portfolio-manager'),
+            'all_items' => __('Testimonials', 'headless-portfolio-manager'),
+            'search_items' => __('Search Testimonials', 'headless-portfolio-manager'),
+            'not_found' => __('No testimonials found.', 'headless-portfolio-manager'),
+            'not_found_in_trash' => __('No testimonials found in Trash.', 'headless-portfolio-manager'),
             'featured_image' => 'Customer Image',
             'set_featured_image' => 'Set customer image',
             'remove_featured_image' => 'Remove customer image',
@@ -65,7 +65,7 @@ class Portfolio_Testimonials
     {
         add_meta_box(
             'testimonial_details',
-            __('Testimonial Details', 'textdomain'),
+            __('Testimonial Details', 'headless-portfolio-manager'),
             array($this, 'render_meta_box'),
             'testimonials',
             'normal',
@@ -87,12 +87,12 @@ class Portfolio_Testimonials
 
         ?>
         <p>
-            <label for="testimonial_role"><?php esc_html_e('Role:', 'textdomain'); ?></label>
+            <label for="testimonial_role"><?php esc_html_e('Role:', 'headless-portfolio-manager'); ?></label>
             <input type="text" id="testimonial_role" name="testimonial_role" value="<?php echo esc_attr($role); ?>"
                 class="widefat">
         </p>
         <p>
-            <label for="testimonial_review"><?php esc_html_e('Review:', 'textdomain'); ?></label>
+            <label for="testimonial_review"><?php esc_html_e('Review:', 'headless-portfolio-manager'); ?></label>
             <textarea id="testimonial_review" name="testimonial_review" class="widefat"
                 rows="5"><?php echo esc_textarea($review); ?></textarea>
         </p>
