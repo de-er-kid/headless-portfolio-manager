@@ -33,7 +33,7 @@ class Portfolio_Slides_REST_API {
             $slides[] = array(
                 'image' => $image ? $image[0] : null,
                 'title' => $post->post_title,
-                'subtitle' => get_post_meta($post->ID, '__slide_subtitle', true),
+                'subtitle' => get_post_meta($post->ID, '_slide_subtitle', true),
             );
         }
 
