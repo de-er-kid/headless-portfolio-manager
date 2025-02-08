@@ -49,20 +49,20 @@
          
          // Post Types
          require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-gallery.php';
-        //  require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-packages.php';
-        //  require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-slides.php';
          require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-testimonials.php';
-        //  require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-faqs.php';
+          require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-slides.php';
+         //  require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-faqs.php';
+        //  require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-packages.php';
          
          // Taxonomies
-         require_once HPM_PLUGIN_PATH . 'includes/taxonomy/class-portfolio-category.php';
-        //  require_once HPM_PLUGIN_PATH . 'includes/taxonomy/class-portfolio-category-image-meta.php';
+        //  require_once HPM_PLUGIN_PATH . 'includes/taxonomy/class-portfolio-taxonomy.php';
          
          // API
          require_once HPM_PLUGIN_PATH . 'includes/api/class-testimonials-rest-api.php';
          require_once HPM_PLUGIN_PATH . 'includes/api/class-services-rest-api.php';
          require_once HPM_PLUGIN_PATH . 'includes/api/class-gallery-categories-rest-api.php';
          require_once HPM_PLUGIN_PATH . 'includes/api/class-gallery-rest-api.php';
+         require_once HPM_PLUGIN_PATH . 'includes/api/class-slides-rest-api.php';
 
         //  Theme
         require_once HPM_PLUGIN_PATH . 'includes/class-portfolio-headless-theme.php';
@@ -72,11 +72,10 @@
         //  $this->settings = new Portfolio_Admin_Settings();
          new Portfolio_Gallery();
          new Portfolio_Testimonials();
-         new Portfolio_Category();
-         new Portfolio_REST_API();
-         //  new Portfolio_Slides();
+          new Portfolio_Slides();
          //  new Portfolio_FAQs();
          //  new Portfolio_Packages();
+        //  new Portfolio_REST_API();
      }
 
  

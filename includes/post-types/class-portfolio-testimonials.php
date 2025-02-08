@@ -52,7 +52,7 @@ class Portfolio_Testimonials
             'show_in_menu' => true,
             'supports' => array('title', 'thumbnail'),
             'show_in_rest' => true,
-            'menu_icon' => 'dashicons-format-quote', // Changed to a more appropriate testimonial icon
+            'menu_icon' => 'dashicons-format-quote',
             'capability_type' => 'post',
             'hierarchical' => false,
             'rewrite' => array('slug' => 'testimonials'),

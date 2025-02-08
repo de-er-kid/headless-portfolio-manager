@@ -3,7 +3,7 @@
 if (!defined('ABSPATH')) {
     exit;
 }
-class Portfolio_REST_API {
+class Portfolio_Testimonials_REST_API {
     public function __construct() {
         add_action('rest_api_init', array($this, 'register_endpoints'));
     }
@@ -42,4 +42,4 @@ class Portfolio_REST_API {
     }
 }
 
-new Portfolio_REST_API();
+new Portfolio_Testimonials_REST_API();
