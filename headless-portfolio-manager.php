@@ -48,7 +48,7 @@
  
      private function load_dependencies() {
          // Admin
-         require_once HPM_PLUGIN_PATH . 'includes/admin/class-admin-settings.php';
+         require_once HPM_PLUGIN_PATH . 'includes/admin/class-portfolio-admin-settings.php';
          
          // Post Types
          require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-gallery.php';
