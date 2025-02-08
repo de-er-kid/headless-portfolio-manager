@@ -61,6 +61,8 @@
          // API
          require_once HPM_PLUGIN_PATH . 'includes/api/class-testimonials-rest-api.php';
          require_once HPM_PLUGIN_PATH . 'includes/api/class-services-rest-api.php';
+         require_once HPM_PLUGIN_PATH . 'includes/api/class-gallery-categories-rest-api.php';
+         require_once HPM_PLUGIN_PATH . 'includes/api/class-gallery-rest-api.php';
 
         //  Theme
         require_once HPM_PLUGIN_PATH . 'includes/class-portfolio-headless-theme.php';
