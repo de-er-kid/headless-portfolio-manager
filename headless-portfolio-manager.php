@@ -41,9 +41,6 @@
          // Initialize components
          $this->init_components();
          
-         // Add hooks
-         add_action('admin_menu', array($this, 'add_admin_menu'));
-        //  add_action('init', array($this, 'remove_frontend_features'));
      }
  
      private function load_dependencies() {
@@ -71,33 +68,21 @@
      private function init_components() {
         //  $this->settings = new Portfolio_Admin_Settings();
          new Portfolio_Gallery();
-        //  new Portfolio_Packages();
-        //  new Portfolio_Slides();
          new Portfolio_Testimonials();
-        //  new Portfolio_FAQs();
          new Portfolio_Category();
-        //  new Portfolio_Category_Image_Meta();
          new Portfolio_REST_API();
+         //  new Portfolio_Slides();
+         //  new Portfolio_FAQs();
+         //  new Portfolio_Packages();
      }
+
  
-     public function add_admin_menu() {
-         add_menu_page(
-             'Portfolio Manager',
-             'Portfolio Manager',
-             'manage_options',
-             'portfolio-manager',
-             array($this->settings, 'render_settings_page'),
-             'dashicons-camera',
-             20
-         );
-     }
- 
-     public function remove_frontend_features() {
-        if (!is_admin() && !wp_doing_ajax() && !defined('REST_REQUEST') && strpos($_SERVER['REQUEST_URI'], '/wp-json/') === false) {
-            wp_redirect(get_option('headless_frontend_url', 'http://localhost:3000'));
-            exit;
-        }
-    }
+    //  public function remove_frontend_features() {
+    //     if (!is_admin() && !wp_doing_ajax() && !defined('REST_REQUEST') && strpos($_SERVER['REQUEST_URI'], '/wp-json/') === false) {
+    //         wp_redirect(get_option('headless_frontend_url', 'http://localhost:3000'));
+    //         exit;
+    //     }
+    // }
  }
  
  // Initialize plugin

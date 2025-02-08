@@ -49,10 +49,16 @@ class Portfolio_Testimonials
             'labels' => $labels,
             'public' => false,
             'show_ui' => true,
-            'show_in_menu' => 'portfolio-manager',
+            'show_in_menu' => true,
             'supports' => array('title', 'thumbnail'),
             'show_in_rest' => true,
-            'menu_icon' => 'dashicons-testimonial',
+            'menu_icon' => 'dashicons-format-quote', // Changed to a more appropriate testimonial icon
+            'capability_type' => 'post',
+            'hierarchical' => false,
+            'rewrite' => array('slug' => 'testimonials'),
+            'has_archive' => false,
+            'menu_position' => null,
+            'exclude_from_search' => true,
         );
 
         register_post_type('testimonials', $args);
