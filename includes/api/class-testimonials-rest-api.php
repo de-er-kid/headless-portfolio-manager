@@ -1,6 +1,8 @@
 <?php
-// includes/api/class-rest-api.php
 
+if (!defined('ABSPATH')) {
+    exit;
+}
 class Portfolio_REST_API {
     public function __construct() {
         add_action('rest_api_init', array($this, 'register_endpoints'));

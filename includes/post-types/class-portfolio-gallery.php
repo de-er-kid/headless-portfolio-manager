@@ -40,9 +40,9 @@ class Portfolio_Gallery {
 
         $args = array(
             'labels'              => $labels,
-            'public'              => true,
-            'has_archive'         => true,
-            'publicly_queryable'  => true,
+            'public'              => 0,
+            'has_archive'         => 0,
+            // 'publicly_queryable'  => 0,
             'show_ui'            => true,
             'show_in_menu'       => true,
             'show_in_rest'       => true,
