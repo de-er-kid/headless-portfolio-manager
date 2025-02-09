@@ -52,9 +52,9 @@ class Headless_Portfolio_Manager
         require_once HPM_PLUGIN_PATH . 'includes/admin/class-portfolio-admin-settings.php';
 
         // Post Types
+        require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-slides.php';
         require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-gallery.php';
         require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-testimonials.php';
-        require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-slides.php';
         require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-faqs.php';
         //  require_once HPM_PLUGIN_PATH . 'includes/post-types/class-portfolio-packages.php';
 
@@ -76,9 +76,9 @@ class Headless_Portfolio_Manager
     private function init_components()
     {
         //  $this->settings = new Portfolio_Admin_Settings();
+        new Portfolio_Slides();
         new Portfolio_Gallery();
         new Portfolio_Testimonials();
-        new Portfolio_Slides();
         new Portfolio_FAQs();
         //  new Portfolio_Packages();
         //  new Portfolio_REST_API();

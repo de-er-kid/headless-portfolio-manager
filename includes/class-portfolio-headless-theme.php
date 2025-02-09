@@ -25,6 +25,12 @@ class Portfolio_Headless_Theme
 
         // Redirect frontend users to headless frontend (but keep admin access)
         add_action('template_redirect', [$this, 'redirect_frontend_users']);
+
+        // Disable default WordPress REST API endpoints
+        add_filter('rest_endpoints', [$this, 'disable_default_rest_endpoints']);
+
+        // Disable XML-RPC
+        add_filter('xmlrpc_enabled', '__return_false');
     }
 
     /**
@@ -52,6 +58,40 @@ class Portfolio_Headless_Theme
             wp_dequeue_style('global-styles');
             wp_dequeue_style('wp-block-library');
         }, 100);
+    }
+
+    /**
+     * Disables default WordPress REST API endpoints for security.
+     */
+    public function disable_default_rest_endpoints($endpoints)
+    {
+        // List of endpoints to disable
+        $endpoints_to_disable = [
+            '/wp/v2/posts',
+            '/wp/v2/pages',
+            '/wp/v2/media',
+            '/wp/v2/categories',
+            '/wp/v2/tags',
+            '/wp/v2/comments',
+            '/wp/v2/settings',
+            '/wp/v2/themes',
+            '/wp/v2/plugins',
+            '/wp/v2/block-directory',
+            '/wp/v2/search',
+            '/wp/v2/statuses',
+            '/wp/v2/taxonomies',
+            '/wp/v2/types',
+            '/wp/v2/users',
+            '/wp/v2/users/(?P<id>[\d]+)',
+        ];
+
+        foreach ($endpoints_to_disable as $endpoint) {
+            if (isset($endpoints[$endpoint])) {
+                unset($endpoints[$endpoint]);
+            }
+        }
+
+        return $endpoints;
     }
 
     /**
@@ -101,7 +141,7 @@ class Portfolio_Headless_Theme
      */
     public function redirect_frontend_users()
     {
-        if (!is_admin() && !wp_doing_ajax() && !defined('REST_REQUEST') && strpos($_SERVER['REQUEST_URI'], '/wp-json/') === false) {
+        if (!is_admin() && !wp_doing_ajax() && !defined('REST_REQUEST') && strpos($_SERVER['REQUEST_URI'], '/wp-json/portfolio/') === false) {
             wp_redirect(get_option('headless_frontend_url', 'http://localhost:3000'));
             exit;
         }

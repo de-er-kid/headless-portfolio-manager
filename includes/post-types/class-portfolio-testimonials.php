@@ -57,7 +57,7 @@ class Portfolio_Testimonials
             'hierarchical' => false,
             'rewrite' => array('slug' => 'testimonials'),
             'has_archive' => false,
-            'menu_position' => null,
+            'menu_position' => 55,
             'exclude_from_search' => true,
         );
 
